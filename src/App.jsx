@@ -1,15 +1,16 @@
-// import logo from './logo.svg';
+
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import ItemLContainer from './components/ItemLContainer/ItemLContainer';
 import ItemDContainer from './components/ItemDContainer/ItemDContainer';
 import { BrowserRouter as Router, Routes, Route, BrowserRouter, } from "react-router-dom";
-import { CartContext, CartContextProvider } from "./context/CartContext";
-import Card from "./components/Card/Card";
-import { initfirebase } from './firebase/config';
+import { CartCountainer, CartContextProvider } from "./context/CartContext";
+import { initFirebase } from "./firebase/config";
+
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 
-initfirebase()
+initFirebase()
 
 function App() {
 
@@ -28,8 +29,8 @@ function App() {
               <Route path="/categoria/:cid" element={<ItemLContainer greeting='estoy saludando' />} />
 
               <Route path="/detail/:pid" element={<ItemDContainer />} />
-              <Route path="/contacto" element={<FormContainer />} />
-              <Route path="/cart" element={<CartCountainer />} />
+              {/* <Route path="/contacto" element={<FormContainer />} /> */}
+              {/* <Route path="/cart" element={<CartCountainer />} /> */}
               <Route path="*" element={<Navbar to='/' />} />
             </Routes>
           

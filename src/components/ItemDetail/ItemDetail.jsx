@@ -1,14 +1,16 @@
+import { useCartContext } from "../../context/CartContext"
 
 
 
 
 
-const ItemDetail = ({product}) =>{
+const ItemDetail = ({ product }) => {
 
-    const {} = useCartContext()
+    const { agregarAlCart } = useCartContext()
 
     const onAdd = (cantidad) => {
         console.log(cantidad)
+        agregarAlCart({ product, cantidad })
     }
 
     return (
@@ -20,7 +22,7 @@ const ItemDetail = ({product}) =>{
                 <h4>Categoria: {product.categoria}</h4>
             </div>
             <div className="col-6">
-                <ItemCount inital={1} stock={5} onAdd={onAdd} />
+                {/* <ItemCount inital={1} stock={5} onAdd={onAdd} /> */}
             </div>
         </div>
     )

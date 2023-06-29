@@ -1,5 +1,7 @@
+import { useCartContext } from "../../context/CartContext"
+
 const CartCoutainer = () => {
-    const { cartList, vaciarCarro, precioTotal } = useCartcontext()
+    const { cartList, vaciarCarro, precioTotal } = useCartContext()
     return (
         <div>
             { cartList.map(product => (
